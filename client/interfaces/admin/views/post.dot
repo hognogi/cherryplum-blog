@@ -1,0 +1,170 @@
+{{=it.fragments.header()}}
+
+        <div class="vertical_spacer"></div>
+
+        <section id="content">
+
+            <div class="fullwidth centered-m-h">
+
+                <div class="dark_block">
+                    <div class="vertical_spacer quarter"></div>
+                </div>
+
+                <div class="content_box box_shadow_1">
+
+                    <div class="row">
+
+
+
+                        {{=it.fragments.side_menu({
+                            columns: "1-6",
+                            selected: 'new_post'
+                        })}}
+
+
+
+                        <div class="cell col-2-3">
+
+                            <h2>Add new post:</h2>
+
+
+                            <form method="post" id="single_post_form" action="{{=(it.post? '/edit_post?post_id=' + it.post._id : '/new_post' )}}">
+
+
+
+                                <input type="text" name="headline" placeholder="Headline" value="{{=(it.post? it.post.headline : '')}}" />
+
+
+                                <input type="text" name="permalink" placeholder="Permalink" value="{{=(it.post? it.post.permalink : '')}}"/>
+
+
+								<input type="hidden" name="primary_image_id" value="{{=(it.post && it.post.primary_image_id ? it.post.primary_image_id : '')}}"/>
+
+								<div class="primary-image-container">
+									{{? it.post && it.post.primary_image_id}}
+										<img src="/{{=it.post.primary_image.url}}">
+									{{?}}
+								</div>
+
+								<textarea name="body" placeholder="Post body" class="post-body">{{=(it.post? it.post.body : '')}}</textarea>
+
+                                <input type="text" autocomplete="off" class="tag-picker" placeholder="tags (CSV)" {{=(it.tags? 'data-tags="'+ it.tags.join(',') +'"':'')}} name="tags" value="{{=(it.post? it.post.tags : '')}}" />
+
+								<input type="hidden" name="media" value="{{=(it.post && it.post.media?  it.post.media.join(',') : '')}}">
+
+								<h3>Meta</h3>
+
+								<input type="text" name="meta_description" placeholder="Meta Description"  value="{{=(it.post? it.post.meta_description : '')}}"/>
+
+								<input type="text" name="meta_keywords" placeholder="Meta Keywords"  value="{{=(it.post? it.post.meta_keywords : '')}}"/>
+
+                            </form>
+
+
+							{{? it.post}}
+								<h3>Comments</h3>
+								<div class="comment-list" data-post-id="{{=it.post._id}}">
+									{{~it.post.comments :comment:index}}
+
+										<div class="comment" >
+
+											<div class="row">
+												<div class="cell col-1-1">
+													<input type="checkbox" class="comment-check" data-comment-id="{{=comment.id}}" >
+													<span class="comment-id">#{{=comment.id}}</span>
+													<span class="comment-name"><span>by</span>{{=comment.name}}</span>
+													{{? comment.answer_to}}
+														<span class="comment-answer">answer to: <b>{{=comment.answer_to}}</b></span>
+													{{?}}
+													{{? comment.banned}}
+														<span class="comment-ban">banned for: <b>{{=comment.ban_reason}}</b></span>
+													{{?}}
+												</div>
+
+												<div class="cell col-1-1">
+													{{=comment.body}}
+												</div>
+
+
+											</div>
+
+
+											<br>
+										</div>
+
+									{{~}}
+
+									<div class="controls">
+										<div class="row">
+											<div class="cell col-1-4">
+												<a class="admin-button" id="ban_comments">Ban selected</a>
+											</div>
+
+											<div class="cell col-1-4">
+												<input type="text" class="ban-reason" id="ban_reason" placeholder="Ban reason" />
+											</div>
+
+											<div class="cell col-1-4">
+												<a class="admin-button" id="unban_comments">Unban selected</a>
+											</div>
+
+											<div class="cell col-1-4">
+												<a class="admin-button delete" id="delete_comments">Delete selected</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							{{?}}
+
+
+
+
+
+                        </div>
+
+                        <div class="cell col-1-6 padded post-buttons single-post">
+
+							<a href="#" data-form-submit="#single_post_form" class="save" ><i class="fa fa-floppy-o"></i>Save</a>
+
+							{{? it.post}}
+                            	<a href="/delete_post/?post_id={{=it.post._id}}" class="delete click-confirm" data-confirm-message="Are you sure you whant to delete the post: {{=it.post.headline}} ?" ><i class="fa fa-trash-o"></i>Delete</a>
+
+								<select  class="post-status-update"  >
+	                                <option {{=(it.post.status != "published"? 'selected="selected"' : '')}} data-update-url="/edit_post_status/?post_id={{=it.post._id}}&status=draft"  value="draft">Draft</option>
+	                                <option {{=(it.post.status == "published"? 'selected="selected"' : '')}} data-update-url="/edit_post_status/?post_id={{=it.post._id}}&status=published"  value="published">Published</option>
+	                            </select>
+							{{?}}
+
+
+
+							<br><br>
+							<div class="media-container">
+
+								<a href="#" class="add-media" data-post-id="{{=(it.post? it.post._id : '')}}">Attach Media</a>
+
+								<div class="media-content">
+
+
+
+								{{? it.post && it.post.media_files }}
+
+									{{~it.post.media_files :media_file:index}}
+										<div class="img-wrapper {{=it.post.primary_image_id == media_file._id ? 'primary-image' : ''}}"  data-image-id="{{=media_file._id}}">
+											<img src="/{{=media_file.url}}"  />
+											<i class="fa fa-check-square-o"></i>
+										</div>
+									{{~}}
+
+								{{?}}
+
+
+								</div>
+							</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+{{=it.fragments.footer()}}

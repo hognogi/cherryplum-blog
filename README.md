@@ -1,2 +1,2 @@
-# cherryplum-blog
-A blog built with the cherryplum framework
+# blog_1
+Blog versionon 1
