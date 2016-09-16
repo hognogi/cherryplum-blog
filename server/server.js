@@ -66,7 +66,7 @@ module.exports = function(config){
 		// default middlewares
 
 		//SET THE ASYNC FILE UPLADER MIDDLEWARE
-		_ctrl.app.use( multer({ dest:  CORE.config.root_path_relative_to_core + 'client/res/uploads/tmp'}).array('filesToUpload', 15) );
+		_ctrl.app.use( multer({ dest:  'client/res/uploads/tmp'}).array('filesToUpload', 15) );
 
 		_ctrl.app.use( bodyParser.json() );       // to support JSON-encoded bodies
 		_ctrl.app.use( bodyParser.urlencoded({     // to support URL-encoded bodies

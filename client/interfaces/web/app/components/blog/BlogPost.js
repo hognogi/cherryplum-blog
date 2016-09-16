@@ -4,37 +4,27 @@ var Row = ReactBootstrap.Row;
 var Col = ReactBootstrap.Col;
 
 var DateFormat = require('dateformat');
+var sanitizeHtml = require('sanitize-html');
 
-var sanitizePostContent = function(state){
+var getSanitizedPostContent = function(state){
 	var content = state.content;
 
-	if( state.isTeaser ) {
-		img_string = "";
-
-		var image_index = content.indexOf("<img");
-
-		if( image_index != -1 ){
-			//avem imagine
-			var end_index = content.indexOf("/>", image_index) + 2;
-
-			var img_string = content.substring(image_index, end_index);
-
-		}
-
-
-		content = content.replace(/<(?:.|\n)*?>/gm, '');
-
-		content += img_string;
-
-		if( content.length > 300 ) {
-			content = content.substr(0,300);
-			content += ' <a href="/p/'+state.permalink+'">[read more]</a>';
-		}
+	if(state.isTeaser) {
+		content = state.snippet
 	}
+
 
 	return {
 		__html : content
 	}
+
+/*
+	return {
+		__html : sanitizeHtml(content, {
+			allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'h2', 'h1' ]),
+			allowedAttributes: false
+		})
+	}*/
 };
 
 
@@ -63,6 +53,7 @@ var BlogPost = React.createClass({
 			title : this.props.postData.headline || '',
 			meta : getMeta(this.props.postData.created),
 			content: this.props.postData.body || '',
+			snippet: this.props.postData.snippet || '',
 			tags: this.props.postData.tags || [],
 			primary_image : this.props.postData.primary_image_id ? this.context.media[ this.props.postData.primary_image_id  ] : false,
 			isTeaser: this.props.isTeaser,
@@ -93,7 +84,7 @@ var BlogPost = React.createClass({
 				}
 
 
-				<div className="post-content" dangerouslySetInnerHTML={sanitizePostContent( this.state )} />
+				<div className="post-content" dangerouslySetInnerHTML={getSanitizedPostContent( this.state )} />
 
 				{ this.state.isTeaser ? <div className="post-buttons">
 					<a className="full-post" href={"/p/" + this.state.permalink + ""}>

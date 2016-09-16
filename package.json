@@ -39,7 +39,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "setup_db": "node setup_db.js"
+    "setup": "node setup.js"
   },
   "repository": {
     "type": "git",
@@ -58,7 +58,7 @@
   },
   "homepage": "https://github.com/tookiebloom/blog_1#readme",
   "engines": {
-    "node": ">= 0.6.0",
+    "node": ">= 4.0",
     "npm": ">= 1.0.0"
   }
 }

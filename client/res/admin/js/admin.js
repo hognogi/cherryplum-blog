@@ -5,6 +5,11 @@ tinymce.init({
 	plugins: "image imagetools"
 });
 
+tinymce.init({
+	selector:'textarea.post-snippet',
+	min_height: 150,
+	plugins: "image imagetools"
+});
 
 $(function(){
 

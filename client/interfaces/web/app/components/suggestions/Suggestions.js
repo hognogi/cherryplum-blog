@@ -9,27 +9,14 @@ var Suggestions = React.createClass({
 	render: function() {
 		return (
 			<div className="suggestions">
+				<h3>See also</h3>
 
-
-				<h3>Most relevant posts</h3>
-
-				<h4>Programming:</h4>
-				<a href="#">Script Master race article </a>
-				<a href="#">Moer Programming stuff!</a>
-				<a href="#">To program or not to program? this is the question! </a>
-				<a href="#">Obligatory  post</a>
-
-				<h4>Javascript:</h4>
-
-				<a href="#">Is Javascript really that great?</a>
-				<a href="#">What if not?</a>
-				<a href="#">What Javascript is and what javascript is not</a>
-				<a href="#">More  ofc</a>
-				<a href="#">There is no Javascript only </a>
+				<h4>Cherryplum:</h4>
+				<a href="https://github.com/hognogi/cherryplum">Framework demo</a>
+				<a href="https://github.com/hognogi/cherryplum-blog">This blog</a>
 			</div>
 		);
 	}
-
 });
 
 

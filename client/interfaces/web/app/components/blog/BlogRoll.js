@@ -74,6 +74,7 @@ var BlogRoll = React.createClass({
 	},
 
 	render: function() {
+		
 
 		var posts 		= this.state.posts;
 		var tags		= this.state.tags;

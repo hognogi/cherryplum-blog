@@ -46,6 +46,8 @@
 
 
 	<body>
+
+		<!--div id="background"></div-->
 		<div id="react-app"></div>
 	</body>
 
@@ -74,7 +76,5 @@
 	ga('send', 'pageview');
 
 	</script>
-
-
 
 </html>

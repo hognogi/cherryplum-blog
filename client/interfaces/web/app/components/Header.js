@@ -27,7 +27,7 @@ var Header = React.createClass({
 				
 
 					<div className="header-buttons pull-right">
-						<a href="/contact/" className="contact header-button" >
+						<a href="/contact/" className="contact header-button">
 							<i className="fa fa-envelope-o" />
 						</a>
 					</div>
@@ -35,18 +35,18 @@ var Header = React.createClass({
 					<div className="header-buttons pull-right">
 
 
-						<a href="https://twitter.com/AndreiHognogi" className="header-button twitter" >
+						<a href="https://twitter.com/AndreiHognogi" className="header-button twitter" alt="Twitter">
 							<i className="fa fa-twitter-square" aria-hidden="true"></i>
 						</a> 
 						<br />
 
 						
-						<a href="https://github.com/hognogi"  className="header-button github" >
+						<a href="https://github.com/hognogi"  className="header-button github" alt="Github">
 							<i className="fa fa-github" aria-hidden="true"></i>
 						</a>
 					</div>
 
-					{this.state.auth.token && <div className="header-buttons pull-right"> 
+					{this.state.auth.token && <div className="header-buttons pull-right" alt="Contact me"> 
 						<a href="/?setinterface=admin" className="login header-button" >
 							<i className="fa fa-unlock-alt" aria-hidden="true"></i>
 						</a>

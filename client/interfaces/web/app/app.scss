@@ -5,8 +5,19 @@
 
 
 body {
-	background: url(./img/bg.jpg);
 	font-family: "Roboto", sans-serif;
+	position: relative;
+	background: url(./img/bg-min.jpg);
+	
+	/*#background {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+		background: url(./img/bg.jpg);
+	}*/
 
 	.main-container {
 		background: #c9c7c6;
@@ -63,12 +74,24 @@ body {
 
 		.content {
 
-			span, a {
+			margin-top: -20px;
+
+			* {
+				color: #aaa;
+			}
+
+			&>* {
 				padding: 5px 20px; 
 				margin-left: 20px;
 				margin-top: 20px;
+				display: inline-block;
+				&::first-child {
+					margin-top: 0;
+				}
+			}
 
-				color: #aaa;
+			a {
+				text-decoration: underline;
 			}
 		}
 	}
