@@ -11,20 +11,17 @@ var Bio = React.createClass({
 			<Row >
 				<Col xs={12}>
 					<h1 className="main-title">Short bio</h1>
-					<div >
-						This is some kind of interesting Bio
-					</div>
 
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						Hello everyone, 
 					</p>
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						My name is Beni Hognogi, and I'm currently working as a front-end developer at <a target="_blank" href="http://www.accesa.eu/">Accesa</a>
 					</p>
-					<h5> Ask me things </h5>
 					<p>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						There are many thing that interest me, but this website was build to focus on programming, and as an highly opinionated person, i'm looking forward to any meaningfull conversation. 
 					</p>
+
 				</Col>
 			</Row>
 		);
