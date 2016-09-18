@@ -344,7 +344,10 @@ article.blog-post {
     article.blog-post .post-content img {
       float: none !important;
       margin: 40px auto;
-      display: block; }
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%; }
   article.blog-post .post-details {
     height: 180px;
     overflow: hidden; }
