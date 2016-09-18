@@ -62,8 +62,12 @@ article.blog-post {
 		line-height: 240px;
 		img {
 			max-width: 100%;
-			max-height: 240px;
 		}
+	}
+
+
+	&.blog-post-teaser figure img {
+		max-height: 240px;
 	}
 
 	.post-buttons {

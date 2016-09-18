@@ -68,7 +68,7 @@ var BlogPost = React.createClass({
 
 		return (
 
-			<article className="blog-post clearfix">
+			<article className={"blog-post clearfix" + (this.state.isTeaser? ' blog-post-teaser' : '')}>
 
 				{ this.state.isTeaser ?
 					(<a href={"/p/" + this.state.permalink} ><h2>{this.state.title}</h2></a>):
