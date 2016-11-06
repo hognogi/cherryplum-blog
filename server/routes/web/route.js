@@ -48,7 +48,7 @@ module.exports = [
 					]).then(function(results){
 
 						res.send( req.interface.render('homepage', {
-							posts		: posts,
+							posts		: posts.reverse(),
 							media		: results[0],
 							settings	: results[1],
 							tags		: results[2],
