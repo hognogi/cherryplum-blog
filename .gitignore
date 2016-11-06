@@ -3,3 +3,4 @@ node_modules/
 .gulp-scss-cache/
 .sass-cache/
 .env
+client/res/uploads/
