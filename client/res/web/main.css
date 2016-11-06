@@ -101,10 +101,8 @@ body {
   border-top: solid 5px #29475f; }
   .header > .col-xs-8 {
     min-width: 220px; }
-  .header .logo-wrapper {
-    padding-left: 16px; }
-    .header .logo-wrapper img {
-      max-width: 42px; }
+  .header .logo-wrapper img {
+    max-width: 21px; }
   .header .header-buttons a {
     display: inline-block;
     margin-right: 10px; }
@@ -155,7 +153,7 @@ body {
     border-top: solid 10px #29475f; }
     .header .logo-wrapper img {
       max-width: none;
-      margin-top: 12px; }
+      padding-left: 30px; }
     .header .header-buttons a,
     .header .header-buttons a.login {
       margin-right: 20px; }

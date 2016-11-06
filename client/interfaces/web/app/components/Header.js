@@ -16,12 +16,12 @@ var Header = React.createClass({
 	render: function() {
 		return (
 			<Row className="header">
-				<Col xs={4} >
+				<Col xs={2} >
 					<a className="logo-wrapper" href="/">
-						<img src="/res/web/img/logo.png" />
+						<img src="/res/web/img/logo2.png" />
 					</a>
 				</Col>
-				<Col xs={8}>
+				<Col xs={10}>
 
 
 				

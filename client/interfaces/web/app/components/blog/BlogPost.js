@@ -31,7 +31,7 @@ var getSanitizedPostContent = function(state){
 var getMeta = function (created) {
 	if( !created ) return "";
 
-	var _date = new Date( created/1000 );
+	var _date = new Date( created );
 	return DateFormat(_date, "dddd, mmmm dS, yyyy, h:MM:ss TT");
 };
 
