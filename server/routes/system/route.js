@@ -19,9 +19,11 @@ module.exports = [
 
 			.then(function(file_arrays){
 
-				req.model.addMedia(  file_arrays.valid )
-				.then(function(insert_report) {
+				var _nextStep =  file_arrays.valid.length > 0 ? 
+									req.model.addMedia(  file_arrays.valid ) :
+									Promise.resolve(true); 
 
+				_nextStep.then(function(insert_report) {
 					res.send( req.interface.render('upload_report', file_arrays));
 				})
 			})

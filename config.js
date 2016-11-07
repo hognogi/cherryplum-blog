@@ -25,7 +25,7 @@ module.exports = {
 
 	media_validator: {
 		max_size: 30000000, // 30 MiB
-		allowed_mimetypes : ["image/jpeg","image/jpg", "image/pjpeg", "image/png", "image/bmp", "application/octet-stream", "video/avi", "image/gif"]
+		allowed_mimetypes : ["image/jpeg","image/jpg", "image/pjpeg", "image/png", "image/bmp", "application/octet-stream", "video/avi", "image/gif", "image/x-icon"]
 
 	},
 
